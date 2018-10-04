@@ -29,28 +29,26 @@
                         <div class="card card-header">
                             <h4 class="d-flex justify-content-center">Login Area</h4>
                         </div>
+
                         <div class="card card-body">
                             <!-- --------INPUTERS------------------- -->
                             <div class="ui huge icon input">
-                                <input type="text" placeholder="Username...">
+                                <input type="text" id="inputUsername" name="inputUsername" placeholder="Username...">
                             </div>
                             <div class="ui huge icon input mt-3">
-                                <input type="text" placeholder="Password...">
+                                <input type="text" id="inputPassword" placeholder="Password...">
                             </div>
                             <hr>
-
                             <div class="">
                                 <div class="ui buttons col align-self-end">
-                                    <button class="ui button">Cancel</button>
+                                    <button id="btnCancel" class="ui button">Cancel</button>
                                     <div class="or"></div>
-                                    <button class="ui positive button">Login</button>
+                                    <button id="btnLogin" name="btnLogin" class="ui positive button">Login</button>
                                 </div>
                             </div>
-
-
-
                             <!-- ------------INPUTERS--------------- -->
                         </div>
+
                     </div>
                 </div>
 
@@ -59,6 +57,9 @@
     </div>
 
     <!-- ----------------------------------------------------------------------------------------------------------------------------- -->
+    <!-- Own -->
+    <script src="./js/index.js"></script>
+
     <!-- bootstrap -->
     <script src="./js/jquery-slim.min.js"></script>
     <script src="./js/popper.min.js"></script>
@@ -68,8 +69,7 @@
     <script src="./js/jquery-3.3.1.js"></script>
     <script src="./js/semantic.min.js"></script>
 
-    <!-- Own -->
-    <script src="./js/index.js"></script>
+
 </body>
 
 </html>
