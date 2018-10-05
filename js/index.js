@@ -1,5 +1,5 @@
 // INPUTERS
-var iptUsername = document.querySelector("input#inputUsername").value;
+var iptUsername = document.querySelector("input#inputUsername");
 
 //BUTTONS
 var btnLogin = document.getElementById("btnLogin");
@@ -9,11 +9,11 @@ var btnCancel = document.getElementById("btnCancel");
 btnLogin.addEventListener("click", function() {
   const dbaseAPI = ["admin", "admin123"];
 
-  if (iptUsername.length <= 0) {
+  if (iptUsername.value.length <= 0) {
     alert("Jangan Kosong");
     window.location.reload(true);
     sessionStorage.clear();
-  } else if (iptUsername == dbaseAPI[0]) {
+  } else if (iptUsername.value == 'admin') {
     sessionStorage.setItem("aloha", "sexy");
     alert("god");
   } else {
