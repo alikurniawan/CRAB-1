@@ -1,17 +1,29 @@
-var iptUsername = document.getElementById('inputUsername').value
+// INPUTERS
+var iptUsername = document.querySelector("input#inputUsername").value;
 
-var btnLogin = document.getElementById('btnLogin');
+//BUTTONS
+var btnLogin = document.getElementById("btnLogin");
+var btnCancel = document.getElementById("btnCancel");
 
-var userx = ['aloha', 'manoha']
+//ACTIONS
+btnLogin.addEventListener("click", function() {
+  const dbaseAPI = ["admin", "admin123"];
 
-btnLogin.addEventListener('click', function () {
-    var bool = Boolean(iptUsername === userx[0]);
-    
-    sessionStorage.setItem('loginSession', 'alohaSexy');
+  if (iptUsername.length <= 0) {
+    alert("Jangan Kosong");
+    window.location.reload(true);
+    sessionStorage.clear();
+  } else if (iptUsername == dbaseAPI[0]) {
+    sessionStorage.setItem("aloha", "sexy");
+    alert("god");
+  } else {
+    sessionStorage.clear();
+    window.location.reload(true);
+  }
+});
 
-    if(bool === true){
-        alert('Mantap')
-    }else{
-        alert('bad')
-    }
-})
+btnCancel.addEventListener("click", function() {
+  sessionStorage.clear();
+  window.location.reload(true);
+});
+
