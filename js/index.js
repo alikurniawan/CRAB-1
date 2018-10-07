@@ -44,20 +44,15 @@ btnLogin.addEventListener("click", function () {
     btnLogOut.classList.add('btn', 'btn-success');
     btnLogOut.setAttribute('id', 'btnLogx');
 
-    // $(document).ready(function(){
-    //   $("#btnLogx").click(function(){
-    //     console.log('OK')
-    //   })
-    // })
-    
-    btnLogx.addEventListener("click", function() {
-      sessionStorage.clear();
-      window.location.reload(true);
-    });
-
-
-
-
+    $(document).ready(function () {
+      $("#btnLogx").click(function () {
+        sessionStorage.clear();
+        $("#inputTwo").slideUp()
+        setTimeout(function () {
+          window.location.reload(true);
+        }, 2000);
+      })
+    })
 
   } else {
     alert("Username and Password Salah");
@@ -71,4 +66,3 @@ btnCancel.addEventListener("click", function () {
   sessionStorage.clear();
   window.location.reload(true);
 });
-
