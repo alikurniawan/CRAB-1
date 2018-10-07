@@ -1,19 +1,25 @@
 //REQ
 // import { cards } from "./cards";
 
+//Username Info
+
+
 // INPUTERS
 var iptUsername = document.querySelector("input#inputUsername");
 var loginPage = document.querySelector("#loginPage");
-var midArea = document.querySelector("#midArea");
+var midAreaOne = document.querySelector("#midAreaOne");
+var inputOne = document.querySelector('#inputOne');
+var inputTwo = document.querySelector("#inputTwo");
 
 //BUTTONS
 var btnLogin = document.getElementById("btnLogin");
 var btnCancel = document.getElementById("btnCancel");
-var btnLogout = document.getElementById("btnLogout");
+// var btnLogx = document.getElementById("btnLogx");
+
 
 //ACTIONS
 
-btnLogin.addEventListener("click", function() {
+btnLogin.addEventListener("click", function () {
   const dbaseAPI = ["asdmin", "admin123"];
   // var card = new cards();
 
@@ -22,8 +28,37 @@ btnLogin.addEventListener("click", function() {
     window.location.reload(true);
     sessionStorage.clear();
   } else if (iptUsername.value == dbaseAPI[0]) {
+
+    inputOne.remove()
+
     sessionStorage.setItem("aloha", "sexy");
-    midArea.innerHTML = `<button id="btnLogout" type="button" class="btn btn-success">Logout</button>`;
+    // midArea.innerHTML = `
+    // <button id="btnLogout" type="button" 
+    // class="btn btn-success">Logout</button>
+    // `;
+    const btnLogOut = document.createElement('button');
+    const btnLabelOut = document.createTextNode('Logout');
+    btnLogOut.appendChild(btnLabelOut);
+    inputTwo.appendChild(btnLogOut);
+
+    btnLogOut.classList.add('btn', 'btn-success');
+    btnLogOut.setAttribute('id', 'btnLogx');
+
+    // $(document).ready(function(){
+    //   $("#btnLogx").click(function(){
+    //     console.log('OK')
+    //   })
+    // })
+    
+    btnLogx.addEventListener("click", function() {
+      sessionStorage.clear();
+      window.location.reload(true);
+    });
+
+
+
+
+
   } else {
     alert("Username and Password Salah");
     sessionStorage.clear();
@@ -31,12 +66,9 @@ btnLogin.addEventListener("click", function() {
   }
 });
 
-btnCancel.addEventListener("click", function() {
+
+btnCancel.addEventListener("click", function () {
   sessionStorage.clear();
   window.location.reload(true);
 });
 
-btnLogout.addEventListener("click", function() {
-  sessionStorage.clear();
-  window.location.reload(true);
-});
