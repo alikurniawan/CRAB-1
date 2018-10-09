@@ -9,3 +9,9 @@ body{
 #topPosition{
     padding-top: 40%;
 }
+.iLogoSize{
+    width: 30%; height: 70%;
+}
+.colorMe{
+    color: steelblue;
+}
