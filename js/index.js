@@ -14,7 +14,7 @@ var Person = {
 }
 
 var SlideAction = {
-    slide1: `
+    Slide1: `
         <div class="ui icon message">
             <i class="notched circle loading icon"></i>
             <div class="content">
@@ -23,25 +23,8 @@ var SlideAction = {
             </div>
             <p>We're fetching that content for you.</p>
             </div>
-        </div>`
-}
-
-
-$(document).ready(function () {
-
-    $("#btnLogin").click(function () {
-        $("#bodyOne").slideUp();
-
-        bodyOne.innerHTML = SlideAction.slide1;
-
-        $("#bodyOne").slideDown().slideUp(setTimeout = 5000);
-        // bodyOne.innerHTML = `REDY`;
-        // $("#bodyOne").slideDown();    
-
-
-        $("#tableBelow").hide()
-        show(setTimeout = 5000)
-        tableBelow.innerHTML = `
+        </div>`,
+    TableOne: `
         <div id="tableIsi" class="col col-12">
             <table class="ui celled table">
                 <thead>
@@ -68,9 +51,31 @@ $(document).ready(function () {
                 </tbody>
             </table>
         </div>
-        `;
+    `
+}
 
-        $("#tableIsi").slideDown()
+
+$(document).ready(function () {
+
+    $("#btnLogin").click(function () {
+
+
+        if (inputUsername.value.length <= 0) {
+            alert('dont Empty')
+        } else if (inputUsername.value == Person.objUser) {
+            $("#bodyOne").slideUp();
+            bodyOne.innerHTML = SlideAction.Slide1;
+            $("#bodyOne").slideDown();
+        } else {
+            window.location.reload(true);
+        }
+
+        // $("#tableBelow").hide();
+        // $("#tableBelow").show(setTimeout = 5000);
+
+        // tableBelow.innerHTML = SlideAction.TableOne;
+
+        // $("#tableIsi").slideDown()
 
 
 
