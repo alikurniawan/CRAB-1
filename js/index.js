@@ -9,8 +9,8 @@ let tableBelow = document.getElementById('tableBelow');
 // JQUERY ACT
 
 var Person = {
-    objUser: 'administrator',
-    objPass: 'admin12345'
+    objUser: 'admin',
+    objPass: 'admin123'
 }
 
 var SlideAction = {
@@ -59,14 +59,15 @@ $(document).ready(function () {
 
     $("#btnLogin").click(function () {
 
-
-        if (inputUsername.value.length <= 0) {
-            alert('dont Empty')
-        } else if (inputUsername.value == Person.objUser) {
+        if (inputUsername.value.length <= 0 || inputPassword.value.length <= 0) {
+            alert('Fill Blank can`t be processed')
+        } 
+        else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
             $("#bodyOne").slideUp();
             bodyOne.innerHTML = SlideAction.Slide1;
             $("#bodyOne").slideDown();
         } else {
+            alert('Username or Password doesn`t exist in Our DataBase !!')
             window.location.reload(true);
         }
 
