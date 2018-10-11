@@ -61,26 +61,15 @@ $(document).ready(function () {
 
         if (inputUsername.value.length <= 0 || inputPassword.value.length <= 0) {
             alert('Fill Blank can`t be processed')
-        } 
-        else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
+        } else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
             $("#bodyOne").slideUp();
             bodyOne.innerHTML = SlideAction.Slide1;
             $("#bodyOne").slideDown();
+            sessionStorage.setItem("PASSED", "GREAT PASSING");
         } else {
             alert('Username or Password doesn`t exist in Our DataBase !!')
             window.location.reload(true);
         }
-
-        // $("#tableBelow").hide();
-        // $("#tableBelow").show(setTimeout = 5000);
-
-        // tableBelow.innerHTML = SlideAction.TableOne;
-
-        // $("#tableIsi").slideDown()
-
-
-
-
 
     })
 
@@ -88,7 +77,6 @@ $(document).ready(function () {
         $("#btnGoogle").slideUp();
 
         $("#btnGoogle").css("background-color", "green");
-        // $("#btnGoogle Google").remove();
 
         $("#btnGoogle").slideDown();
     })
