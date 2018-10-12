@@ -26,6 +26,12 @@ $(document).ready(function () {
             bodyOne.innerHTML = SlideAction.Slide1;
             $("#bodyOne").slideDown();
             sessionStorage.setItem("PASSED", "GREAT PASSING");
+
+            $("#btnLogout").click(function(){
+                $("#bodyOne").slideUp(5000);
+                sessionStorage.clear();
+                window.location.reload(true);
+            })
         } else {
             alert('Username or Password doesn`t exist in Our DataBase !!')
             window.location.reload(true);
@@ -40,4 +46,6 @@ $(document).ready(function () {
 
         $("#btnGoogle").slideDown();
     })
+
+    
 })
