@@ -1,4 +1,3 @@
-
 //INPUTERS
 let inputUsername = document.querySelector('#inputUsername');
 let inputPassword = document.querySelector('#inputPassword');
@@ -27,7 +26,7 @@ $(document).ready(function () {
             $("#bodyOne").slideDown();
             sessionStorage.setItem("PASSED", "GREAT PASSING");
 
-            $("#btnLogout").click(function(){
+            $("#btnLogout").click(function () {
                 $("#bodyOne").slideUp(5000);
                 sessionStorage.clear();
                 window.location.reload(true);
@@ -47,5 +46,5 @@ $(document).ready(function () {
         $("#btnGoogle").slideDown();
     })
 
-    
+
 })
