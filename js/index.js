@@ -12,57 +12,62 @@ var Person = {
     objUser: 'admin',
     objPass: 'admin123',
     url1: 'http://localhost/login-page-session/pages/inputPage.html',
+    Security: "PASSED"
 }
-
-function def() {
-    console.log('wew')
-}
-
 
 $(document).ready(function () {
 
+
     $("#btnLogin").click(function () {
 
-        if (inputUsername.value.length <= 0 || inputPassword.value.length <= 0) {
-            alert('Fill Blank can`t be processed');
-            console.log(cards.test);
-        } else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
-            $("#bodyOne").slideUp();
-            bodyOne.innerHTML = ``
-            $("#bodyOne").slideDown();
-            setTimeout(() => {
-                bodyOne.innerHTML = `Please Wait...`
-            }, 1000);
+        let Secure = Boolean(nameSession == Person.Security)
+        if (Secure == true) {
+            if (inputUsername.value.length <= 0 || inputPassword.value.length <= 0) {
+                alert('Fill Blank can`t be processed');
 
-            setTimeout(() => {
-                bodyOne.innerHTML = SlideAction.Slide1;
-            }, 3000);
-
-            setTimeout(() => {
-                bodyOne.innerHTML = `We're almost there !!`
-            }, 7000);
-
-            setTimeout(() => {
+            } else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
+                set1MadeSession();
+                
                 $("#bodyOne").slideUp();
-            }, 10000);
+                bodyOne.innerHTML = ``
+                $("#bodyOne").slideDown();
+                setTimeout(() => {
+                    bodyOne.innerHTML = `Please Wait...`
+                }, 1000);
 
-            sessionStorage.setItem("PASSED", "GREAT PASSING");
+                setTimeout(() => {
+                    bodyOne.innerHTML = SlideAction.Slide1;
+                }, 3000);
 
-            setTimeout(() => {
-                window.location = "http://localhost/login-page-session/pages/inputPage.html"
-            }, 11000);
-            
+                setTimeout(() => {
+                    bodyOne.innerHTML = `We're almost there !!`
+                }, 7000);
 
-            $("#btnLogout").click(function () {
-                $("#bodyOne").slideUp(5000);
-                sessionStorage.clear();
+                setTimeout(() => {
+                    $("#bodyOne").slideUp();
+                }, 10000);
+
+
+                setTimeout(() => {
+                    window.location = Person.url1;
+                }, 11000);
+
+
+                $("#btnLogout").click(function () {
+                    $("#bodyOne").slideUp(5000);
+                    sessionStorage.clear();
+                    window.location.reload(true);
+                })
+
+            } else {
+                alert('Username or Password doesn`t exist in Our DataBase !!')
                 window.location.reload(true);
-            })
-
+            }
         } else {
-            alert('Username or Password doesn`t exist in Our DataBase !!')
             window.location.reload(true);
         }
+
+
 
     })
 
