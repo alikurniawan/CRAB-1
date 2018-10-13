@@ -1,10 +1,10 @@
-let nameSession = "PASSED";
-let vSession = "Great Passing";
+// let nameSession = "PASSED";
+// let vSession = "Great Passing";
 
 function set1MadeSession() {
-    sessionStorage.setItem(nameSession, vSession);
+    sessionStorage.setItem('PASSED', 'Great Passed');
 }
 
-function set2GetSession(params) {
+function set2GetSession() {
     sessionStorage.getItem(nameSession);
 }

@@ -20,14 +20,13 @@ $(document).ready(function () {
 
     $("#btnLogin").click(function () {
 
-        let Secure = Boolean(nameSession == Person.Security)
-        if (Secure == true) {
+        
             if (inputUsername.value.length <= 0 || inputPassword.value.length <= 0) {
                 alert('Fill Blank can`t be processed');
 
             } else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
                 set1MadeSession();
-                
+
                 $("#bodyOne").slideUp();
                 bodyOne.innerHTML = ``
                 $("#bodyOne").slideDown();
@@ -47,11 +46,9 @@ $(document).ready(function () {
                     $("#bodyOne").slideUp();
                 }, 10000);
 
-
                 setTimeout(() => {
                     window.location = Person.url1;
                 }, 11000);
-
 
                 $("#btnLogout").click(function () {
                     $("#bodyOne").slideUp(5000);
@@ -63,10 +60,7 @@ $(document).ready(function () {
                 alert('Username or Password doesn`t exist in Our DataBase !!')
                 window.location.reload(true);
             }
-        } else {
-            window.location.reload(true);
-        }
-
+       
 
 
     })
