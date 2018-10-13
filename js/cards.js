@@ -11,7 +11,7 @@ var SlideAction = {
                 Just one second
             </div>
             <p>We're fetching that content for you.</p>
-            <button id="btnLogout" class="ui blue button">LOGOUT</button>
+            <button type="button" class="btn btn-primary disabled">Please Wait...</button>
             </div>
         </div>`,
     TableOne: `

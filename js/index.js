@@ -10,8 +10,14 @@ let tableBelow = document.getElementById('tableBelow');
 
 var Person = {
     objUser: 'admin',
-    objPass: 'admin123'
+    objPass: 'admin123',
+    url1: 'http://localhost/login-page-session/pages/inputPage.html',
 }
+
+function def() {
+    console.log('wew')
+}
+
 
 $(document).ready(function () {
 
@@ -22,8 +28,24 @@ $(document).ready(function () {
             console.log(cards.test);
         } else if (inputUsername.value == Person.objUser && inputPassword.value == Person.objPass) {
             $("#bodyOne").slideUp();
-            bodyOne.innerHTML = SlideAction.Slide1;
+            bodyOne.innerHTML = ``
             $("#bodyOne").slideDown();
+            setTimeout(() => {
+                bodyOne.innerHTML = `Please Wait...`
+            }, 1000);
+
+            setTimeout(() => {
+                bodyOne.innerHTML = SlideAction.Slide1;
+            }, 3000);
+
+            setTimeout(() => {
+                bodyOne.innerHTML = `We're almost there !!`
+            }, 7000);
+
+            setTimeout(() => {
+                $("#bodyOne").slideUp();
+            }, 10000);
+
             sessionStorage.setItem("PASSED", "GREAT PASSING");
 
             $("#btnLogout").click(function () {
@@ -31,6 +53,7 @@ $(document).ready(function () {
                 sessionStorage.clear();
                 window.location.reload(true);
             })
+
         } else {
             alert('Username or Password doesn`t exist in Our DataBase !!')
             window.location.reload(true);
