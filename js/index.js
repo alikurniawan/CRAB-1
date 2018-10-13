@@ -48,6 +48,11 @@ $(document).ready(function () {
 
             sessionStorage.setItem("PASSED", "GREAT PASSING");
 
+            setTimeout(() => {
+                window.location = "http://localhost/login-page-session/pages/inputPage.html"
+            }, 11000);
+            
+
             $("#btnLogout").click(function () {
                 $("#bodyOne").slideUp(5000);
                 sessionStorage.clear();
