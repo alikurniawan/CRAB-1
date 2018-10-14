@@ -12,7 +12,7 @@ var Person = {
     objUser: 'admin',
     objPass: 'admin123',
     url1: 'http://localhost/CRAB-1/pages/inputPage.html',
-    urlGit: 'https://alikurniawan.github.io/CRAB-1/inputPage.html',
+    urlGit: 'https://alikurniawan.github.io/CRAB-1/pages/inputPage.html',
     Security: "PASSED"
 }
 
