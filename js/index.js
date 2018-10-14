@@ -11,7 +11,7 @@ let tableBelow = document.getElementById('tableBelow');
 var Person = {
     objUser: 'admin',
     objPass: 'admin123',
-    url1: 'http://localhost/login-page-session/pages/inputPage.html',
+    url1: 'http://localhost/CRAB-1/pages/inputPage.html',
     Security: "PASSED"
 }
 
