@@ -13,7 +13,8 @@ if (ses1 == null) {
         $("#btnLogout").click(function () {
             localStorage.clear();
             sessionStorage.clear();
-            window.location = 'http://localhost/login-page-session/'
+            // window.location = 'http://localhost/login-page-session/'
+            window.location = 'https://alikurniawan.github.io/CRAB-1/'
         })
     })
 }
